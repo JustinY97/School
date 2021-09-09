@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}VCU Course Override{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='VCU_Seal.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='VCU_Seal.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+        </button>
+        <a class="navbar-brand" href="/"><img src='static/VCU_Seal.ico' width='30' height='30' class='d-inline-block align-top' alt=""></a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/form">Form</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{%block content %}
+<div class="container">
+    {%block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
