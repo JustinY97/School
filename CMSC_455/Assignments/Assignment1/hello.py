@@ -28,10 +28,10 @@ def index():
 def form_page():
     form = OverrideForm()
     if form.validate_on_submit():
-        return redirect("/submitted")
+        return redirect("/form/submitted")
     return render_template('form_page.html', form=form)
 
-@app.route("/submitted")
+@app.route("/form/submitted")
 def form_submitted():
     return render_template('form_submitted.html')
 
